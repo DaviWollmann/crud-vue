@@ -4,7 +4,7 @@
             <v-card-title>Cadastro de categorias</v-card-title>
             <v-card-subtitle>
                 <br>
-                <v-btn color="primary" @click="insertUpdateCategoryWindow=true">Nova Categoria</v-btn>
+                <v-btn color="primary" @click="clearFields();insertUpdateCategoryWindow=true;">Nova Categoria</v-btn>
             </v-card-subtitle>
             <v-card-text class="grid-content">
                 <v-data-table  :headers="headers" :items="categories" :items-per-page="5">
@@ -35,20 +35,20 @@
 
         <!-- INSERÇÃO/ATUALIZACAO DE CATEGORIAS -->
         <v-dialog v-model="insertUpdateCategoryWindow" max-width="400px">
-        <v-card>
-            <v-card-title class="headline">
-                Nova Categoria
-            </v-card-title>
-            <v-card-text>
-                <v-form>
-                    <v-text-field type="text" label="nome" v-model="newCategoryName" />
-                    <v-text-field type="number" label="id" v-model="nextCategoryId" disabled></v-text-field>
-                    <v-btn color="success" @click="submitForm()">Confirmar</v-btn>
-                    &nbsp;
-                    <v-btn color="error" @click="cancelForm()">Cancelar</v-btn>
-                </v-form>
-            </v-card-text>
-        </v-card>
+            <v-card>
+                <v-card-title class="headline">
+                    Nova Categoria
+                </v-card-title>
+                <v-card-text>
+                    <v-form>
+                        <v-text-field type="text" label="nome" v-model="newCategoryName" />
+                        <v-text-field type="number" label="id" v-model="nextCategoryId" disabled></v-text-field>
+                        <v-btn color="success" @click="submitForm()">Confirmar</v-btn>
+                        &nbsp;
+                        <v-btn color="error" @click="cancelForm()">Cancelar</v-btn>
+                    </v-form>
+                </v-card-text>
+            </v-card>
         </v-dialog>
     </div>
 </template>
